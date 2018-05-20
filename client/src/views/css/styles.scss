@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i');
+
+body {
+	background: #016FB9;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	color: #FAFAFA;
+	margin: 0;
+	padding: 0;
+}
+//Home.js
+.header {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+	letter-spacing: .2px;
+
+		img {
+			margin-left: 10px;
+		}
+
+}
+
+.instructions {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+
+		p {
+			width: 25%;
+			text-align: center;
+			font-size: .9em;
+			color: #C0C0C0;
+		}
+}
+
+.zipcodeInput {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	position: fixed;
+	width: 100%;
+	top: 0;
+
+		form {
+
+			input {
+				padding: 10px 180px;
+				border: none;
+				border-radius: 2px;
+				outline: none;
+				background: #e8e8e8;
+				padding-left: 10px;
+				box-shadow: 1px 1px 2px #333;
+
+			}
+
+			button {
+				padding: 10px 22px;
+				border-radius: 2px;
+				margin-left: 4px;
+				border: none;
+				background: #EC4E20;
+				color: #FFF;
+				box-shadow: 1px 1px 4px #333;
+			}
+		} 
+}
+
+//CurrentWeather.js
+.weatherCardContainer {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #797979;
+
+	h4 {
+		color: #a8a8a8;
+	}
+
+		.weatherCard {
+			min-height: 320px;
+			min-width: 320px;
+			background: #FFF;
+			box-shadow: 1px 1px 4px #333;
+			border-radius: 2px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			position: relative;
+			margin-top: 20px;
+
+			img {
+				margin-top: 20px;
+			}
+
+			.conditionsOverview {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				min-height: 350px;
+
+				 p:nth-child(1) {
+				 	font-size: 2.5em;
+				 	font-weight: bold;
+				 	margin-top: -10px;
+				 	margin-bottom: -10px;
+				 }
+
+				 p:nth-child(2) {
+				 	font-size: 1.2em;
+				 }
+			}
+
+			.conditionDetails {
+				position: absolute;
+				bottom: 0;
+				display: flex;
+				justify-content: space-around;
+				width: 100%;
+				margin-bottom: 20px;
+				font-size: .9em;
+				color: #595959;
+
+			}
+		}
+}
