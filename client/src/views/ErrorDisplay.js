@@ -1,22 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './css/styles.css';
-import ErrorIcon from './assets/error.svg';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import LightningBolt from './assets/lightning.svg';
 
+const Home = () => {
 
-const ErrorDisplay = () => {
+   return (
+      <div>
+         <div className='header'>
+            <h2>Weather Forcast</h2>
+            <img src={LightningBolt}/>
+         </div>
 
-	return (
-		<div className='error'>
-			<img src={ErrorIcon} alt='error icon'/>
-			<p> Oops! Looks like there was an error. Please re-enter a 5-digit zipcode.</p>
+         <div className="instructions">
+            <p>Enter a US zipcode below to get the current weather conditions for that area.</p>
+         </div>
 
-			<Link to='/'><button>Try Again</button></Link>
-		</div>
-	)
-
+         <div className='zipcodeInput'>
+            <form method='POST' action='/search-location'>
+	       <input type='text' placeholder='Enter zipcode..' name='zipcode'/>
+	       <button>ENTER</button>
+            </form>
+         </div>
+      </div>
+   )
 }
 
-
-export default ErrorDisplay;
+export default Home
