@@ -26,7 +26,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 20px; }
+  margin-top: 10px; }
   .instructions p {
     width: 25%;
     text-align: center;
@@ -43,12 +43,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 100vh;
-  position: fixed;
   width: 100%;
-  top: 0; }
+  margin-top: 80px; }
   .zipcodeInput form input {
-    padding: 10px 180px;
+    padding: 10px 170px;
     border: none;
     border-radius: 2px;
     outline: none;
@@ -57,7 +55,7 @@ body {
     -webkit-box-shadow: 1px 1px 2px #333;
             box-shadow: 1px 1px 2px #333; }
   .zipcodeInput form button {
-    padding: 10px 22px;
+    padding: 10px 18px;
     border-radius: 2px;
     margin-left: 4px;
     border: none;
@@ -66,8 +64,28 @@ body {
     -webkit-box-shadow: 1px 1px 4px #333;
             box-shadow: 1px 1px 4px #333; }
 
+.homeBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px; }
+  .homeBtn button {
+    padding: 10px 22px;
+    border-radius: 2px;
+    margin-left: 4px;
+    border: none;
+    background: #a8a8a8;
+    color: #FFF;
+    -webkit-box-shadow: 1px 1px 4px #333;
+            box-shadow: 1px 1px 4px #333; }
+
 .weatherCardContainer {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,7 +99,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #797979; }
+  color: #797979;
+  margin-top: 100px; }
   .weatherCardContainer h4 {
     color: #a8a8a8; }
   .weatherCardContainer .weatherCard {
@@ -175,6 +194,37 @@ body {
               box-shadow: 1px 1px 4px #333;
       margin-top: 20px; }
 
+.loading {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .loading .loadingIcon {
+    -webkit-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+            transform: rotate(20deg);
+    -webkit-animation: rotateLoading 1.5s ease-in-out infinite;
+            animation: rotateLoading 1.5s ease-in-out infinite; }
+@-webkit-keyframes rotateLoading {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+@keyframes rotateLoading {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 .error {
   height: 100vh;
   display: -webkit-box;
