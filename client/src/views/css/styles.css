@@ -8,16 +8,24 @@ body {
   padding: 0; }
 
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 100px;
   letter-spacing: .2px; }
   .header img {
     margin-left: 10px; }
 
 .instructions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 20px; }
   .instructions p {
     width: 25%;
@@ -26,9 +34,15 @@ body {
     color: #C0C0C0; }
 
 .zipcodeInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 100vh;
   position: fixed;
   width: 100%;
@@ -40,7 +54,8 @@ body {
     outline: none;
     background: #e8e8e8;
     padding-left: 10px;
-    box-shadow: 1px 1px 2px #333; }
+    -webkit-box-shadow: 1px 1px 2px #333;
+            box-shadow: 1px 1px 2px #333; }
   .zipcodeInput form button {
     padding: 10px 22px;
     border-radius: 2px;
@@ -48,14 +63,24 @@ body {
     border: none;
     background: #EC4E20;
     color: #FFF;
-    box-shadow: 1px 1px 4px #333; }
+    -webkit-box-shadow: 1px 1px 4px #333;
+            box-shadow: 1px 1px 4px #333; }
 
 .weatherCardContainer {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   color: #797979; }
   .weatherCardContainer h4 {
     color: #a8a8a8; }
@@ -63,20 +88,37 @@ body {
     min-height: 320px;
     min-width: 320px;
     background: #FFF;
-    box-shadow: 1px 1px 4px #333;
+    -webkit-box-shadow: 1px 1px 4px #333;
+            box-shadow: 1px 1px 4px #333;
     border-radius: 2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: relative;
     margin-top: 20px; }
     .weatherCardContainer .weatherCard img {
       margin-top: 20px; }
     .weatherCardContainer .weatherCard .conditionsOverview {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
       position: absolute;
       min-height: 350px; }
       .weatherCardContainer .weatherCard .conditionsOverview p:nth-child(1) {
@@ -89,11 +131,75 @@ body {
     .weatherCardContainer .weatherCard .conditionDetails {
       position: absolute;
       bottom: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
       width: 100%;
       margin-bottom: 20px;
       font-size: .9em;
       color: #595959; }
+  .weatherCardContainer .weatherCardError {
+    min-height: 320px;
+    min-width: 320px;
+    background: #FFF;
+    -webkit-box-shadow: 1px 1px 4px #333;
+            box-shadow: 1px 1px 4px #333;
+    border-radius: 2px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative; }
+    .weatherCardContainer .weatherCardError p {
+      width: 70%;
+      text-align: center; }
+    .weatherCardContainer .weatherCardError button {
+      padding: 10px 22px;
+      border-radius: 2px;
+      margin-left: 4px;
+      border: none;
+      background: #EC4E20;
+      color: #FFF;
+      -webkit-box-shadow: 1px 1px 4px #333;
+              box-shadow: 1px 1px 4px #333;
+      margin-top: 20px; }
 
-/*# sourceMappingURL=styles.css.map */
+.error {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .error p {
+    margin-top: 20px; }
+  .error button {
+    padding: 10px 22px;
+    border-radius: 2px;
+    margin-left: 4px;
+    border: none;
+    background: #a8a8a8;
+    color: #FFF;
+    -webkit-box-shadow: 1px 1px 4px #333;
+            box-shadow: 1px 1px 4px #333;
+    margin-top: 30px;
+    cursor: pointer; }
