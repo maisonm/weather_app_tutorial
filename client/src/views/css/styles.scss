@@ -24,7 +24,7 @@ body {
 .instructions {
 	display: flex;
 	justify-content: center;
-	margin-top: 20px;
+	margin-top: 10px;
 
 		p {
 			width: 25%;
@@ -38,15 +38,13 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 100vh;
-	position: fixed;
 	width: 100%;
-	top: 0;
+	margin-top: 80px;
 
 		form {
 
 			input {
-				padding: 10px 180px;
+				padding: 10px 170px;
 				border: none;
 				border-radius: 2px;
 				outline: none;
@@ -57,7 +55,7 @@ body {
 			}
 
 			button {
-				padding: 10px 22px;
+				padding: 10px 18px;
 				border-radius: 2px;
 				margin-left: 4px;
 				border: none;
@@ -69,13 +67,32 @@ body {
 }
 
 //CurrentWeather.js
+
+.homeBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;
+
+		button {
+			padding: 10px 22px;
+			border-radius: 2px;
+			margin-left: 4px;
+			border: none;
+			background: #a8a8a8;
+			color: #FFF;
+			box-shadow: 1px 1px 4px #333;
+		}
+
+}
+
 .weatherCardContainer {
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	color: #797979;
+	margin-top: 100px;
 
 	h4 {
 		color: #a8a8a8;
@@ -160,6 +177,28 @@ body {
 		}
 }
 
+//CurrentWeather.js Loading Icon
+.loading  {
+
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.loadingIcon {
+		transform: rotate(20deg);
+		animation: rotateLoading 1.5s ease-in-out infinite;
+	}
+
+	@keyframes rotateLoading {
+		from { transform: rotate(0deg) }
+		to { transform: rotate(360deg) }
+}
+}
+
+
+
+
 //ErrorDisplay.js
 
 .error {
@@ -174,14 +213,15 @@ body {
 		}
 
 		button {
-				padding: 10px 22px;
-				border-radius: 2px;
-				margin-left: 4px;
-				border: none;
-				background: #a8a8a8;
-				color: #FFF;
-				box-shadow: 1px 1px 4px #333;
-				margin-top: 30px;
-				cursor: pointer;
-			}
+			padding: 10px 22px;
+			border-radius: 2px;
+			margin-left: 4px;
+			border: none;
+			background: #a8a8a8;
+			color: #FFF;
+			box-shadow: 1px 1px 4px #333;
+			margin-top: 30px;
+			cursor: pointer;
+		}
 }
+
