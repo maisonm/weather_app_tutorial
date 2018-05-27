@@ -18,7 +18,7 @@ module.exports = (app) => {
 	app.get('/search-location-weather', (req, res) => {
 		//build api URL with user zip
 		const baseUrl = 'http://api.openweathermap.org/data/2.5/weather?zip=';	
-		const apiId = '&appid=<ADD YOUR API ID HERE>&units=imperial';
+		const apiId = '&appid=18408c043cb329f8ecfffd0558165a04&units=imperial';
 		const userLocation = (url1, url2, zipcode) => {
 
 		   let newUrl = url1 + zipcode + url2;
