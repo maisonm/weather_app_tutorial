@@ -10,4 +10,4 @@ To install:
 
 
 
-####This application was created with Node.js, Express, React and the Open Weather Map API found here: https://openweathermap.org/api
+#### This application was created with Node.js, Express, React and the Open Weather Map API found here: https://openweathermap.org/api
