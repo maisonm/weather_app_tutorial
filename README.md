@@ -1,16 +1,11 @@
 # weather_app_tutorial
-Weather application code base for Medium tutorial - Node.js, Express, React.
+Weather application code base for Medium tutorial found here: tiny.cc/a0h1ty
 
 
 To install:
 
 -Clone the repository to your local machine
 
--Run npm install to install dependencies  
+-Install dependencies in both the root directory and /client 
 
 
-To start servers:
-
--In the root directory run nodemon server.js (fires up the Express server on port 3000)
-
--In the client directory run npm start (fires up the React dev server on port 3000)
