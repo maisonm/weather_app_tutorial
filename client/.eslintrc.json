@@ -1,7 +1,6 @@
 {
   "globals": {
     "document": true,
-    "foo": true,
     "window": true
   },
   "extends": [
