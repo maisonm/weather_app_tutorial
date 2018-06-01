@@ -1,0 +1,13 @@
+{
+  "globals": {
+    "document": true,
+    "foo": true,
+    "window": true
+  },
+  "extends": [
+  	"plugin:react/recommended"
+  ],
+  "rules": {
+    "react/prop-types": "off"
+  }
+}

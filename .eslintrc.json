@@ -1,0 +1,21 @@
+{
+  "extends": "strongloop",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "react"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "react/jsx-uses-vars": "error",
+    "react/jsx-uses-react": "error",
+    "max-len": [2, 120, 2, {"ignoreUrls": true}],
+    "handle-callback-err": "warn",
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }]
+  }
+}
