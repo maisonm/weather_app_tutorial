@@ -1,3 +1,5 @@
+require('module-alias/register');
+
 const fs = require('fs');
 
 module.exports = (app) => {

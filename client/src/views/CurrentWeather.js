@@ -36,7 +36,7 @@ class CurrentWeather extends Component {
         if (data.data.cod === '404') {
           this.setState({
             isLoading: false,
-            cityNotFound: '404',
+            cityNotFound: 404,
           });
         } else {
           // Determine weather icon
