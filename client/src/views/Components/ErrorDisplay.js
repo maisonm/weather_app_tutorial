@@ -1,5 +1,5 @@
 import React from 'react';
-import LightningBolt from './assets/lightning.svg';
+import LightningBolt from '../assets/lightning.svg';
 
 const Home = () => {
 

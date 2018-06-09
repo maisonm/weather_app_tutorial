@@ -1,7 +1,7 @@
 import React from 'react';
 
-import LightningBolt from './assets/lightning.svg';
-import RadioButton from './RadioButton';
+import { LightningBolt } from '../assets/lightning.svg';
+import { RadioButton } from '../Components/index';
 
 export default class Home extends React.Component {
 
