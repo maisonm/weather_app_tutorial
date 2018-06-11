@@ -1,31 +1,11 @@
 const fetch = require('node-fetch');
+const generateWebAppURL = require('server/utils').generateWebAppURL;
 
 module.exports = (app) => {
 
-  let zipcode;
-
-  app.post('/search-location', (req, res) => {
-
-    zipcode = req.body.zipcode;
-
-    if (!zipcode || zipcode.length < 5 || zipcode.length > 5) {
-      res.redirect('/error');
-    } else {
-      res.redirect('/current-weather');
-    }
-  });
-
-  app.get('/search-location-weather', (req, res) => {
-    // build api URL with user zip
-    const baseUrl = 'http://api.openweathermap.org/data/2.5/weather?zip=';
-    const apiId = '&appid=<YOUR API KEY GOES HERE>&units=imperial';
-    const userLocation = (url1, url2, zipcode) => {
-
-      let newUrl = url1 + zipcode + url2;
-      return newUrl;
-    };
-
-    const apiUrl = userLocation(baseUrl, apiId, zipcode);
+  app.post('/search-location-weather', (req, res) => {
+    const requestBody = req.body;
+    const apiUrl = generateWebAppURL(requestBody.locationType, requestBody.locationData);
 
     fetch(apiUrl)
       .then(res => res.json())
@@ -35,7 +15,5 @@ module.exports = (app) => {
       .catch(err => {
         res.redirect('/error');
       });
-
   });
-
 };
