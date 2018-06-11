@@ -4,10 +4,8 @@ import './views/css/styles.css';
 import {BrowserRouter as Router, Route } from 'react-router-dom';
 
 // Views
-import App from './views/App';
-import Home from './views/Home';
-import CurrentWeather from './views/CurrentWeather';
-import ErrorDisplay from './views/ErrorDisplay';
+import { App, ErrorDisplay } from './views/Components/index';
+import { Home, CurrentWeather } from './views/Containers/index';
 
 ReactDOM.render(
   <Router>
