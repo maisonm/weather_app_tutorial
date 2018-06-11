@@ -1,41 +1,58 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import { LightningBolt } from '../assets/lightning.svg';
-import { RadioButton } from '../Components/index';
+import { RadioButtonSection } from '../Components/index';
+import { setLocationTextInput, setLocationRadioInput, setDefaultInput } from '../../store/actions/index';
 
-export default class Home extends React.Component {
+const radioButtons = [
+  {
+    value: 'name',
+    radioButtonLabel: 'City name',
+  },
+  {
+    value: 'id',
+    radioButtonLabel: 'City Id',
+  },
+  {
+    value: 'coordinates',
+    radioButtonLabel: 'City co-ordinates',
+  },
+  {
+    value: 'zipcode',
+    radioButtonLabel: 'City zipcode',
+  },
+];
+
+export class Home extends React.Component {
 
   constructor(props) {
     super(props);
 
-    this.state = {
-      locationData: '',
-      locationType: 'zipcode',
-    };
-
-    this.handleRadioInputChange = this.handleRadioInputChange.bind(this);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
-    this.handleInputFieldChange = this.handleInputFieldChange.bind(this);
+    this.props.setDefaultInput();
+    this.inputFieldRef = React.createRef();
   }
 
-  handleRadioInputChange(event) {
-    this.setState({
-      locationType: event.target.value,
-    });
+  handleRadioInputChange = (event) => {
+    this.props.setLocationRadioInput({ locationType: event.target.value });
   }
 
-  handleInputFieldChange(event) {
-    this.setState({
-      locationData: event.target.value,
-    });
+  handleButtonClick = (event) => {
+    this.props.setLocationTextInput({ locationData: this.inputFieldRef.current.value });
   }
 
-  handleButtonClick(event) {
-    console.log(this.props);
-    this.props.history.push({
-      pathname: '/current-weather',
-      state: this.state,
-    });
+  componentDidUpdate = (prevProps) => {
+    const { locationData, locationType } = this.props;
+
+    if (prevProps.locationData !== locationData) {
+      this.props.history.push({
+        pathname: '/current-weather',
+        state: {
+          locationType: locationType,
+          locationData: locationData,
+        },
+      });
+    }
   }
 
   render() {
@@ -50,40 +67,47 @@ export default class Home extends React.Component {
         </div>
         <div className='zipcodeInput'>
           <input
+            ref={this.inputFieldRef}
             type='text'
             placeholder='Enter zipcode..'
             name='zipcode'
-            onChange={this.handleInputFieldChange}
           />
           <button onClick={this.handleButtonClick}>ENTER</button>
         </div>
         <div className='radio-button-section'>
-          <RadioButton
-            value='name'
-            isSelected={this.state.locationType === 'name'}
+          <RadioButtonSection
+            radioButtons={radioButtons}
+            selectedOption={this.props.locationType}
             onChange={this.handleRadioInputChange}
-            radioButtonLabel='City name'
-          />
-          <RadioButton
-            value='id'
-            isSelected={this.state.locationType === 'id'}
-            onChange={this.handleRadioInputChange}
-            radioButtonLabel='City Id'
-          />
-          <RadioButton
-            value='coordinates'
-            isSelected={this.state.locationType === 'coordinates'}
-            onChange={this.handleRadioInputChange}
-            radioButtonLabel='City co-ordinates'
-          />
-          <RadioButton
-            value='zipcode'
-            isSelected={this.state.locationType === 'zipcode'}
-            onChange={this.handleRadioInputChange}
-            radioButtonLabel='City zipcode'
           />
         </div>
       </div>
     );
   }
 };
+
+const mapStateToProps = function(state) {
+  const locationData = state && state.locationData;
+  const locationType = state && state.locationType;
+
+  return {
+    locationType: locationType,
+    locationData: locationData,
+  };
+};
+
+const mapDispatchToProps = function(dispatch) {
+  return {
+    setLocationRadioInput: function(locationRadioConfig) {
+      dispatch(setLocationRadioInput(locationRadioConfig));
+    },
+    setLocationTextInput: function(locationTextConfig) {
+      dispatch(setLocationTextInput(locationTextConfig));
+    },
+    setDefaultInput: function() {
+      dispatch(setDefaultInput());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
