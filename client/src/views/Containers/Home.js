@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import { LightningBolt } from '../assets/lightning.svg';
 import { RadioButtonSection } from '../Components/index';
-import { setLocationTextInput, setLocationRadioInput, setDefaultInput } from '../../store/actions/index';
+import { setLocationTextInput, setLocationRadioInput,
+  setDefaultInput } from '../../store/actions/index';
 
 const radioButtons = [
   {
@@ -29,16 +30,16 @@ export class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.props.setDefaultInput();
+    this.props.actions.setDefaultInput();
     this.inputFieldRef = React.createRef();
   }
 
   handleRadioInputChange = (event) => {
-    this.props.setLocationRadioInput({ locationType: event.target.value });
+    this.props.actions.setLocationRadioInput({ locationType: event.target.value });
   }
 
   handleButtonClick = (event) => {
-    this.props.setLocationTextInput({ locationData: this.inputFieldRef.current.value });
+    this.props.actions.setLocationTextInput({ locationData: this.inputFieldRef.current.value });
   }
 
   componentDidUpdate = (prevProps) => {
@@ -97,7 +98,7 @@ const mapStateToProps = function(state) {
 };
 
 const mapDispatchToProps = function(dispatch) {
-  return {
+  const dispatchActions = {
     setLocationRadioInput: function(locationRadioConfig) {
       dispatch(setLocationRadioInput(locationRadioConfig));
     },
@@ -107,6 +108,10 @@ const mapDispatchToProps = function(dispatch) {
     setDefaultInput: function() {
       dispatch(setDefaultInput());
     },
+  };
+
+  return {
+    actions: dispatchActions,
   };
 };
 
