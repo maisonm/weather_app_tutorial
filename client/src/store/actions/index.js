@@ -1,4 +1,5 @@
-import { SET_LOCATION_TEXT_INPUT, SET_LOCATION_RADIO_INPUT, SET_DEFAULT_INPUT } from './action-types';
+import { SET_LOCATION_TEXT_INPUT, SET_LOCATION_RADIO_INPUT, SET_DEFAULT_INPUT,
+  GET_WEATHER_DATA, LOADING_WEATHER_DATA, LOADED_WEATHER_DATA, ERROR_WEATHER_DATA } from './action-types';
 
 export const setLocationTextInput = locationInputConfig => (
   {
@@ -20,4 +21,12 @@ export const setDefaultInput = () => {
   };
 };
 
-export { SET_LOCATION_TEXT_INPUT, SET_LOCATION_RADIO_INPUT, SET_DEFAULT_INPUT };
+export const getWeatherData = (weatherSearchData) => {
+  return {
+    type: GET_WEATHER_DATA,
+    payload: weatherSearchData,
+  };
+};
+
+export { SET_LOCATION_TEXT_INPUT, SET_LOCATION_RADIO_INPUT, SET_DEFAULT_INPUT,
+  GET_WEATHER_DATA, LOADING_WEATHER_DATA, LOADED_WEATHER_DATA, ERROR_WEATHER_DATA };
