@@ -45,7 +45,7 @@ body {
           align-items: center;
   width: 100%;
   margin-top: 80px; }
-  .zipcodeInput form input {
+  .zipcodeInput input {
     padding: 10px 170px;
     border: none;
     border-radius: 2px;
@@ -54,7 +54,7 @@ body {
     padding-left: 10px;
     -webkit-box-shadow: 1px 1px 2px #333;
             box-shadow: 1px 1px 2px #333; }
-  .zipcodeInput form button {
+  .zipcodeInput button {
     padding: 10px 18px;
     border-radius: 2px;
     margin-left: 4px;
@@ -63,6 +63,16 @@ body {
     color: #FFF;
     -webkit-box-shadow: 1px 1px 4px #333;
             box-shadow: 1px 1px 4px #333; }
+
+.radio-button-section {
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
 
 .homeBtn {
   display: -webkit-box;
